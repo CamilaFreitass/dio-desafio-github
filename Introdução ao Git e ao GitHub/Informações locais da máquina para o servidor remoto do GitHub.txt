@@ -1,0 +1,13 @@
+Informações locais da máquina para o servidor remoto do GitHub:
+
+1° Abre o Git Bash na pasta relacionada ao repositório
+2° Comando "git status" apenas para verificar
+3° Comando "git add ." ou "git add -A" para adicionar todos os arquivos
+4° Comando "git status" apenas para verificar
+5° Comando "git commit -m"  "uma mensagem para descrever o que está incluindo"
+
+Obs: Essa mensagem é o comentário do commit, ela é muito importante e precisa ser coerente com o que está querendo enviar.
+
+6° Comando "git push origin main"
+
+Pronto, agora está tudo na nuvem.

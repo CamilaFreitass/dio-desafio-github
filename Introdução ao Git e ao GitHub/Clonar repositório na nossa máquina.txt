@@ -1,0 +1,7 @@
+Após criar repositório no GitHub, vamos clonar para nossa máquina:
+
+1° Code (copia a informação)
+2° Abre o Git Bash dentro da pasta desejada
+3° Comando "git clone", cola a informação lá do repositório e dá "enter"
+4° Comando "cd" para entrar dentro do repositório
+5° Comando "git status" para verificar que está tudo certo

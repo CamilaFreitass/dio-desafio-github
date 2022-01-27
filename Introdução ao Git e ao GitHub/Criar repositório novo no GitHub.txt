@@ -1,0 +1,14 @@
+Criar repositório novo no GitHub
+
+1° Ir na interface do GitHub
+2° New Repository
+3° Da um nome para o repositório
+4° Description (adiciona uma descrição) 
+
+Obs: Deixar o repositório público para que outras pessoas e empresas possam acompanhar o que você está produzindo.
+
+Obs: "Add a README file" Vai criar um arquivo que é a página inicial do nosso repositório. E é lá que vamos colocar algumas considerações iniciais, anotações, links úteis e etc. Pode explicar tudo que você achar interessante dentro desse arquivo de README.
+
+5° Create repository
+
+
