@@ -1,0 +1,43 @@
+
+git config --list
+- esse comando vai trazer a lista de todas as configurações que estão no sei Git. 
+
+obs: aperte "q" para sair
+
+git config --global --unset user.email
+
+git config --global --unset user.name
+
+-esses dois comandos vão reescrever as configurações
+
+obs: user.email e user.name são as propriedades específicas das configurações. 
+
+agora se listarmos as configurações novamente vamos ver que na lista não consta mais user.name e user.email. Portanto se tentarmos fazer um commit e ele tentar achar e relacionar o autor a esse commit, ele não vai achar essa configuração, então ele vai pedir para que você se identifique. 
+
+git config --global user.email "camilafreitas.economia@gmail.com"
+
+git config --global user.name "CamilaFreitass"
+
+-Esses dois comandos vão cadastrar o novo nome e o novo e-mail.
+
+obs: não tem como alterar o autor de um commit, pois como visto anteriormente, qualquer coisa que mude vai alterar o sha1.
+
+- Quando criamos um novo repositório no GitHub ele já sugere para nós o que temos que fazer. 
+-No caso, a gente tem que ir lá no repositório local e apontar para o repositório do GitHub. 
+-Então o GitHub vai fornecer um caminho do seu novo repositório, copia essa informação e abre o Git Bash dentro da pasta desejada.
+-Então agora vamos empurrar a versão do nosso repositório local para o nosso repositório remoto. 
+-Para conseguir fazer isso, temos que adicionar primeiro a origem para a qual a gente vai enviar os arquivos.
+
+git remote add origin linkquecopiounoGitHub
+
+git remote -v
+
+-Esse último comando lista as repositórios remotos que eu tenho cadastrado. 
+
+git push origin master
+
+obs: "origin" foi o apelido que a gente deu para o link do nosso repositório no GitHub.
+
+-Após esse comando ele mostra exatamentamente para onde enviou.
+
+-Voltando na página do GitHub e recarregando a gente consegue ver que já está lá. 

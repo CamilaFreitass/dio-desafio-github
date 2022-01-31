@@ -1,0 +1,75 @@
+Chaves SSH e Tokens:
+
+Chave SSH é uma maneira segura de estabelecer uma conexão segura e encripitada entre duas máquinas, ou seja, a gente vai se conectar com o servidor do GitHub e vamos configurar nossa máquina local como uma máquina confiável para o GitHub. Estabelecendo essa conexão com duas chaves, uma pública e uma privada. A gente pega a chave pública e coloca lá no GitHub e dessa maneira ele vai conhecer nossa máquina, então todos os repositórios que tivermos na nossa máquina por esse processo SSH, quando enviarmos código para lá o GitHub já vai conhecer a assinatura da nossa máquina, já vai ter uma conexão prévia estabelecida ali e seremos capazes de enviar código sem nem precisar colocar senha. Portanto a nossa máquina já vai ficar configurada para podermos levar os códigos para o GitHub. 
+
+Sequência de comandos para criar a chave:
+-Abre o Git Bash
+ssh-keygen -t ed25519 -c "seu email"
+
+- Após esse comando ele vai te falar o local onde essas chaves vão ficar dentro da sua máquina. 
+
+Obs: (.ssh) isso significa que as pastas dentro do local escolhido que começam com ponto são ocultas.
+
+- Ele vai pedir uma senha, coloca a senha
+
+cd /localescolhido(pasta)
+
+ls
+
+- ele vai mostrar a chave pública e a chave privada
+
+cat id_ed25519.pub 
+
+Obs: a chave que vamos usar no GitHub é a chave pública.
+
+- rodando esse comando ele vai mostrar para a gente a chave pública
+
+- Copia a chave e coloca no GitHub em SSH keys/ Add new > Key > Add SSH key. 
+
+- Então ele gero a chave.
+
+Obs: precisa fazer mais um processo para que a chave funcione direitinho. 
+
+voltando para o Git Bash...
+
+pwd
+
+-Esse comando mostra todo caminho até a pasta onde estamos situados
+
+eval $(ssh-agent -s)
+
+ssh-add id_ed25519
+
+obs: como estamos dentro dessa pasta ssh podemos passar direto a chave.
+
+obs: essa chave qua vamos passar para o agente é a chave privada. Toda vez que chegar uma criptografia com essa chave ele vai usar a chave privada para descripitografar.
+
+obs: Toda vez que for clonar um repositório e tiver uma chave ssh configurada na sua máquina, não vai poder simplesmente copiar o link do repositório e usar o "git clone" para clonar. Tem que copiar a aba do ssh.
+
+git clone abadosshquecopiou
+
+yes
+
+ls
+
+- e já vai aparecer o repositório do GitHub
+
+
+TOKEN DE ACESSO PESSOAL:
+
+Vai gerar um token dentro do GitHub que vai ser usado quando for fazer um commit.
+
+Developer settings > personal access tokens > generate new token
+
+em "note" coloca um nome 
+em "expiration" pode configurar uma data que esse token vai expirar. 
+marque a opção "repo"
+clica em "generate token"
+
+- ele vai gerar um token, então você copia e salva e um lugar seguro. Depois disso não tem mais como ver esse token. Se você perder vai ter que regenerar o token. 
+
+Agora vai copiar o https do commit e vai usar o comando:
+
+git clone https...
+
+dai ele vai pedir o seu token 

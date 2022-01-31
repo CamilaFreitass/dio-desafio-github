@@ -1,0 +1,5 @@
+Parte 3. Instalando o Git:
+
+https://git-scm.com/downloads
+
+Obs: verificar se as opções "Git Bash Here" e "Git Gui Here" estão marcadas.

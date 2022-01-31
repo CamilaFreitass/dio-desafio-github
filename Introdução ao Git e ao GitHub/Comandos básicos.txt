@@ -1,0 +1,40 @@
+- Mudar de pastas
+- Listar as pastas
+- Criar pastas/arquivos
+- Deletar pastas/arquivos
+
+    Windows        Unix
+    - cd           - cd
+    - dir          - ls
+    - mkdir        - mkdir
+    - del/rmdir    - rm -rf
+    - cls          - clear
+
+dir ou ls: vai trazer uma lista de diretórios da pasta na qual estamos situados.
+
+obs: todos esses comandos que vamos usar possuem variancias, ou seja, eles possuem "flags" que são complementos que acrescentam modificam ou formatam a forma como esses comandos são devolvidos para a gente. 
+
+cd: esse comando permite que a gente navegue entre as pastas. 
+
+cd /: ele vai me levar para a base do diretório
+cd nomedapasta: colocando cd e o nome da pasta você vai entrar dentro dessa pasta.
+cd ..: para retroceder um nível na navegação
+
+cls ou clear: limpa o terminal 
+Obs: (CTRL + L) é o mesmo que usar o clearobs
+
+obs: TAB tem a função de autocompletar
+
+mkdir (make directory) pasta: mkdir + nome da pasta que quer criar.
+
+echo: ele apenas printa no terminal o que você digitou
+
+echo print > print.txt: ele vai chegar se na pasta já existe um arquivo com o nome print.txt e caso não tenha ele vai criar para a gente. 
+
+obs: no windows tem uma diferença entre deletar arquivo e deletar repositório. o comando "del" se restinge a deletar arquivo. Portanto se a gente usar del + nomedapasta (repositório) ele vai deletar todos os arquivos dentro da pasta mas não a pasta em si. 
+
+↑ (setinha p/ cima): tu consegue navegar entre os comandos que tu já usou. 
+
+rmdir nomedapasta(repositório) /S /Q: vai deletar o repositório e todos os arquivos dentro dele (no windows).
+
+rm -rf nomedapasta(repositório)/: vai deletar o repositório e todos os arquivos dentro dele (no Unix).

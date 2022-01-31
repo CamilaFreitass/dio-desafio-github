@@ -1,0 +1,75 @@
+Iniciando o Git e criando um commit:
+
+Criando um repositório
+
+abre o Git Bash
+
+ls
+
+cd workspace/
+
+obs: workspace é o nome da pasta que eu quero entrar
+
+
+mkdir livro-receitas
+
+-criou a pasta livro-receitas dentro da pasta workspace
+
+cd livro-receita
+
+-entrou dentro da pasta 
+
+git init 
+
+-esse comando vai permitir iniar o git e fazer o versionamento do código, ou seja, vai criar um repositório. 
+
+TRACKED OU UNTRACKED
+
+Tracked: arquivos que são de fato rastreados pelo Git.
+-Unmodified
+arquivo que ainda não foi modificado
+-Modified
+arquivo que já sofreu modificação
+-Staged
+arquivos que estão se preparando para fazer parte de um outro tipo de agrupamento
+
+Untracked:arquivos que o Git ainda não tem ciência deles.
+
+Quando usamos o comando "add" estamos pegando um arquivo Untracked e movendo direto para Staged.
+
+Você tem um arquivo dentro do repositório do Git que não sofreu modificação, então você abre esse arquivo muda algo nele e ele muda automaticamente de Unmodified para Modified. Como que ele muda isso? Simple, o Git vai comparar o sha1 dos arquivos.
+
+Se a gente rodar o comando "add" de novo nesse arquivo Modified ele também vai ir para Staged.
+
+Se a gente remover um arquivo Unmodified ele vai para Untracked.
+
+Os arquivos que estão em Staged estão se preparando para fazer parte de um Commit. Então quando a gente pega todas as informações que estão em Stage e dá um Commit, ou seja, envelopa todas essas informações, escreve uma mensagem para o nosso Commit, carrega um autor, carrega uma data, eles deixam de ser Stage e passam a ser Commit. E o Commit retorna todos esses arquivos para Unmodified.
+
+Quando nós damos um Commit, além de tirar eles de Stage e passar para Unmodified, nós estamos populando nosso repositório local. Então seu repositório local só vai ser composto por Commits, portanto tudo que está no repositório local tem que estar commitado, caso contrário não consegue enviar para o repositório remoto
+
+ls
+
+-vai aparecer que não tem nada dentro dessa pasta, mas na verdade tem uma pasta oculta do Git.
+
+ls -a
+
+-vai mostrar os arquivos ocultos 
+
+git config --global user.email "camilafreitas.economia@gmail.com"
+
+git config --global user.name CamilaFreitass
+
+-esses comando servem para configurar o autor do commit que está sendo criado
+
+mv strogonoff.md ./receitas/ 
+esse comando vai mover o arquivo strogonoff para dentro da pasta receitas.
+
+git add strogonoff.md receitas/
+esse comando vai adicionar esse arquivo a outro patamar
+
+git commit -m "cria pasta receitas, move arquivo para receitas" 
+comitamos o arquivo 
+
+git add * 
+esse arquivo adiciona todos os arquivos pendentes de uma vez só ao outro patamar
+

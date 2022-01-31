@@ -1,0 +1,13 @@
+Como o GitHub é um lugar para se trabalhar em equipe e com contribuições, pode ocorrer das pessoas que estão trabalhando no mesmo repositório fazerem alterações numa mesma linha do código e é aí que ocorre o problema. 
+
+Vamos supor que a pessoa uma pessoa contribuiu para o seu código que está no repositório do GitHub e logo após isso salvou lá. Enquanto isso você estava trabalhando no mesmo código na sua máquina e fez alterações,  então quando você tentar enviar esse código que você trabalho o GitHub vai ver que é diferente da versão que a outra pessoa enviou. A partir dai o GitHUb vai pedir para você primeiro puxar a versão que está lá (que outra pessoa fez alteração e enviou), fazer alterações, juntar o que você trabalhou com o que a outra pessoa trabalhou e só depois disso poder empurrar. 
+
+git pull origin master
+
+-Com esse comando o Git vai puxar o arquivo do repositório remoto.
+- Após isso é preciso ajustar o arquivo para que fiquem iguais.
+
+git add *
+
+git commit -m "resolve conflitos"
+

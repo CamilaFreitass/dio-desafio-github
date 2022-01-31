@@ -1,0 +1,23 @@
+Introdução ao Git e ao GitHub:
+
+As vezes, manter apenas o estado do arquivo não é suficiente. Tem que manter informações específicas sobre esse arquivo, distribuir em pastas diferentes. 
+
+Para isso, já existem ferramentas.
+
+O Git foi criado em 2005 e ele é um sistema de versionamento de código distribuído. Foi criado pelo Linus Torvalds, ele também é o criador do Linux.
+
+Linus estava enfrentando um problema, pois como ele desenvolveu o Linux de forma colaborativa, (afinal software é feito de maneira colaborativa) e a equipe dele estava distribuida pelo mundo todo, ele precisava de um sistema que versionassamento eficiente. Ou seja, criasse versões do trabalho que ele tava executando ali e fosse complexo o suficiente para suportar pessoas do mundo inteiro trabalhando ali, as vezes no mesmo código, na mesma linha. 
+Então é isso que o Git faz, ele é um software de versionamento de código que nos ajuda a criar e monitorar diferentes versões do nosso código na nossa máquina.
+Contudo, o Git não é o primeiro software para versionamento de código, antes dele já existiam outros. O que acontece é que ele surgiu do descontentamento do Linus com outros sistemas de versionamento de código. 
+Então, depois que já temos um software para cuidar do versionamento de código, aonde podemos guardar ele?
+Aí é que entra o GitHub, que é uma empresa da Microsoft, um repositório de códigos.
+
+Elas são tecnologias completamente diferentes que são complementares. 
+
+Benefícios de usar o GitHub:
+
+1. Controle de versão;
+2. Armazenamento em Nuvem;
+3. Trabalho em Equipe;
+4. Melhorar seu código;
+5. Reconhecimento.

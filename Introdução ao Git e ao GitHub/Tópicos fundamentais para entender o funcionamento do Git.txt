@@ -1,0 +1,57 @@
+Tópicos fundamentais para entender o funcionamento do Git: 
+
+- SHA1:
+Algoritmo de Hash Seguro (Secure Hash Algorithm), é um conjunto de funções hash criptográficas projetadas pela NSA (Agência de Segurança Nacional dos EUA).
+
+A encriptação gera conjunto de caracteres identificador de 40 dígitos. Por exemplo, se você trocar uma virgula por um ponto no arquivo ele vai gerar outro conjunto de caracteres. Se você voltar e trocar o ponto pela vírgula ele vai gerar o mesmo conjunto de caracteres inicial. 
+
+Por isso que o Git faz uso de algoritmo de encriptação, podendo identificar os arquivos de uma forma segura.
+Então o SHA1 é uma forma curta de representar um arquivo. 
+
+echo "ola mundo" | openssl sha1
+
+-Este comando está jogando essa string "ola mundo" para dentro de um algoritmo de encriptação. 
+
+openssl sha1 texto.txt
+- Este comando está jogando esse arquivo texto.txt para dentro de um algoritmo de encriptação.
+
+OBJETOS FUNDAMENTAIS:
+
+BLOBS
+
+Exemplo:
+1 echo 'conteudo' | git hash-object --stdin
+2 > fc31e91b26cf85a55e072476de7f263c89260eb1
+3
+4 echo -e 'conteudo' | openssl sha1
+5 > 65b0d0dda479cc03cce59528e28961e498155f5c
+
+O "echo" vai passar a string para uma função do Git (hash-object) e essa flag (--stdin) é pq a função espera receber um arquivo e a gente ta enviando um texto, então é apenas para que a função entenda isso. Então executando tudo isso, vai ser devolvido para a gente o sha1 desse conteúdo. 
+
+E se fizermos a mesma coisa, só que sem usar o git dessa vez?
+
+Ele vai gerar outro sha1, outro conjunto de caracteres.
+
+Pq isso acontece?
+
+Porque esses objetos específicos do Git, o jeito que o Git lida com eles e manipula é através de objetos. Então os objetos ficam guardados dentro desse objeto chamado Blob, e esse objeto contém meta dados dentro dele. Então o objeto Blob vai ter o tipo do objeto, o tamanho dessa string ou desse arquivo, uma barra contrária com o zero (\0) e o conteúdo de fato desse arquivo. 
+
+exemplo:
+1 echo 'conteudo' | git hash-object --stdin
+2 > fc31e91b26cf85a55e072476de7f263c89260eb1
+3
+4 echo - e 'blob 9\0conteudo' | openssl sha1
+5 > fc31e91b26cf85a55e072476de7f263c89260eb1
+
+Dessa vez nós estamos passando os metadados com a string. Então ele gerou exatamente o mesmo Sha1
+
+TREES
+
+As TREES armazenam BLOBS. Os BLOBS são o bloco básico de composição, as TREES armazenando e apontando para tipos de BLOBS diferentes. Então a TREE ela também contém metadados, ela tem \0, ela aponta para um BLOB que por sua vez tem um sha1 e a TREE também guarda o nome desse arquivo. O BLOB ele não guarda o nome do arquivo, apenas o sha1. A TREE vai ser responsável por monter toda a estrutura de onde está os arquivos e onde estão localizados esses arquivos, portanto as TREE podem apontar tanto para BLOBS quanto para outras TREES. Isso ocorre porque os diretórios dentro do sistema operacional podem conter outros diretórios. As TREES também tem um sha1 desse metadado, ou seja sha1 da própria TREE, ou seja, se mudar alguma coisa dentro da estrutura da TREE vai mudar o sha1 da TREE
+
+COMMITS
+
+O COMMIT é o objeto que vai juntar tudo, que vai dar sentido para a alteração que você ta fazendo. Ele aponta para uma TREE, aponta para um parente (último COMMIT realizado antes dele), aponta para um autor e aponta para uma mensagem. Essa mensagem serve para dar sentido para esse monte de arquivos dentro desse monte de pasta. O autor é quem ta fazendo o COMMIT. Esses COMMITS  também tem o "timestamp" que é um carimbo de tempo que leva a data e a hora de quando ele foi criado. O COMMIT também possui um sha1.
+
+Portanto se houver uma mudança dentro de um BLOB, isso vai gerar uma mudança dentro da TREE que consequentemente vai gerar uma mudança dentro do COMMIT. 
+
